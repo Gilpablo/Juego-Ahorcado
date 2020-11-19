@@ -42,6 +42,7 @@ public class JuegoAhorcado {
 	public static boolean comprobarLetraPalabra(String vPalabraSecreta[], String letra) {
 		boolean encontrado=false;
 		
+		
 		return encontrado;
 	}
 	
@@ -76,12 +77,64 @@ public class JuegoAhorcado {
 		}
 	}
 	
+	public static boolean letraRepetida(String letra, String vFallos[]) {
+		boolean repe = false;
+		
+		for (int i = 0; i< vFallos.length; i++) {
+			if (vFallos[i].equalsIgnoreCase(letra)) {
+				repe = true;
+			}
+		}
+		
+		return repe;
+	}
+	
 	//Comprobar que la letra está en vPalabraSecreta
 	//Si esta la guardo en vAciertos, sino la guardo en vFallos
-	public static void comprobarLetraIntroducida(String letra, String[] vPalabraSecreta, String[] vAciertos,
+	public static int comprobarLetraIntroducida(int vidas, String letra, String[] vPalabraSecreta, String[] vAciertos,
 			String[] vFallos) {
-		// TODO Auto-generated method stub
+		boolean encontrado = false;
 		
+		//Comprobar que no se repita una palabra fallada
+		if (letraRepetida(letra, vFallos)==false) {
+			
+			for (int i=0 ; i<vPalabraSecreta.length; i++) {
+				if (letra.equalsIgnoreCase(vPalabraSecreta[i])) {
+					vAciertos[i] = letra;
+					encontrado = true;
+				}
+			}
+			
+			if (encontrado == false) {
+				for (int i = 0; i<vFallos.length; i++) {
+					if (vFallos[i].equals("_")) {
+						vFallos[i]=letra;
+						vidas--;
+						break;
+					}
+				}
+			}
+		}
+		
+		
+		
+		
+		return vidas;
+	}
+	
+	
+	public static boolean heGanado(String vAciertos[]) {
+		//boolean ganado = true;
+		
+		for (int i = 0; i<vAciertos.length; i++) {
+			if (vAciertos[i].equals("_")) {
+				return false;
+//				ganado = false;
+//				break;
+			}
+		}
+		//return ganado;
+		return true;
 	}
 	
 	public static void main(String[] args) {
@@ -101,15 +154,15 @@ public class JuegoAhorcado {
 			System.out.println("Dime una letra");
 			letra = leer.next();
 			//2º Comprobar si la letra está en la palabra
-			comprobarLetraIntroducida(letra,vPalabraSecreta, vAciertos, vFallos);
+			vidas = comprobarLetraIntroducida(vidas, letra,vPalabraSecreta, vAciertos, vFallos);
 			
 			//3º Dibujar muñeco
 			dibujarMuneco(vidas);
 			//4º Dibujar aciertos y errores
 			dibujarAciertorErrores(vFallos, vAciertos);
 			
-			vidas--;
-		}while(vidas>=0);
+			
+		}while(vidas>=0 && heGanado(vAciertos)==false);
 
 	}
 
