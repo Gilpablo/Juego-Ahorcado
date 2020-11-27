@@ -3,34 +3,133 @@ import java.util.Scanner;
 public class JuegoAhorcado1 {
 	public static void dibujarMuneco(int vidas) {
 		switch (vidas) {
+		
 		case 7:
 			System.out.println("_____________________");
 			break;
+			
 		case 6:
-			System.out.println("|");
-			System.out.println("|_____________________");
+            System.out.println(" | ");              
+            System.out.println(" | ");                 
+            System.out.println(" | ");                 
+            System.out.println(" | ");            
+            System.out.println(" | ");        
+            System.out.println(" | ");     
+            System.out.println(" | ");    
+            System.out.println(" | ");
+            System.out.println(" | ");
+            System.out.println(" | ");
+            System.out.println(" | ");
+            System.out.println(" | ");
+    		System.out.println(" | ");
+			System.out.println(" |_____________________");
 			break;
+			
 		case 5:
-			
+			System.out.println(" ____________________");
+	        System.out.println(" | ");              
+	        System.out.println(" | ");                 
+	        System.out.println(" | ");                 
+	        System.out.println(" | ");            
+	        System.out.println(" | ");        
+	        System.out.println(" | ");     
+	        System.out.println(" | ");    
+	        System.out.println(" | ");
+	        System.out.println(" | ");
+	        System.out.println(" | ");
+	        System.out.println(" | ");
+	        System.out.println(" | ");
+	    	System.out.println(" | ");
+			System.out.println(" |_____________________");
 			break;
+			
+
 		case 4:
-			
+			System.out.println(" _______________________ ");
+	        System.out.println(" |                     |");
+	        System.out.println(" |                     |");
+	        System.out.println(" |                  -------");
+	        System.out.println(" |                 | -  -  |");
+	        System.out.println(" |                 |   o   |");
+	        System.out.println(" |                  -------");
+	        System.out.println(" | 					   |		");    
+	        System.out.println(" | 					   | 	");
+	        System.out.println(" |					   |		");
+	        System.out.println(" | 					   |		");
+	        System.out.println(" | 							");
+	        System.out.println(" | 							");
+	    	System.out.println(" | 							");
+			System.out.println(" |_____________________");
 			break;
+			
 		case 3:
-			
+			System.out.println(" _______________________ ");
+	        System.out.println(" |                     |");
+	        System.out.println(" |                     |");
+	        System.out.println(" |                  -------");
+	        System.out.println(" |                 | -  -  |");
+	        System.out.println(" |                 |   o   |");
+	        System.out.println(" |                  -------");
+	        System.out.println(" | 					   |		");    
+	        System.out.println(" | 					 / | 	");
+	        System.out.println(" |					/  |  	");
+	        System.out.println(" | 				   /   |   	");
 			break;
+			
 		case 2:
-			
+			System.out.println(" _______________________ ");
+	        System.out.println(" |                     |");
+	        System.out.println(" |                     |");
+	        System.out.println(" |                  -------");
+	        System.out.println(" |                 | -  -  |");
+	        System.out.println(" |                 |   o   |");
+	        System.out.println(" |                  -------");
+	        System.out.println(" | 					   |		");    
+	        System.out.println(" | 					 / | \\	");
+	        System.out.println(" |					/  |  \\	");
+	        System.out.println(" | 				   /   |   \\	");
 			break;
+			
 		case 1:
-			
+			System.out.println(" _______________________ ");
+	        System.out.println(" |                     |");
+	        System.out.println(" |                     |");
+	        System.out.println(" |                  -------");
+	        System.out.println(" |                 | -  -  |");
+	        System.out.println(" |                 |   o   |");
+	        System.out.println(" |                  -------");
+	        System.out.println(" | 					   |		");    
+	        System.out.println(" | 					 / | \\	");
+	        System.out.println(" |					/  |  \\	");
+	        System.out.println(" | 				   /   |   \\	");
+	        System.out.println(" | 					  /		");
+	        System.out.println(" | 					 /	 	");
+	    	System.out.println(" | 				    /	  ");
+			System.out.println(" |_____________________");
 			break;
+			
 		case 0:
 			
+			System.out.println(" _______________________ ");
+	        System.out.println(" |                     |");
+	        System.out.println(" |                     |");
+	        System.out.println(" |                  -------");
+	        System.out.println(" |                 | x  x  |");
+	        System.out.println(" |                 |   o   |");
+	        System.out.println(" |                  -------");
+	        System.out.println(" | 					   |		");    
+	        System.out.println(" | 					 / | \\	");
+	        System.out.println(" |					/  |  \\	");
+	        System.out.println(" | 				   /   |   \\	");
+	        System.out.println(" | 					  /	\\	");
+	        System.out.println(" | 					 /	 \\	");
+	    	System.out.println(" | 				    /	  \\");
+			System.out.println(" |_____________________");
+			  System.out.println("--------------------------------");
+			  System.out.println("--------------------------------");
+              System.out.println("GAME OVER");
 			break;
-
-		default:
-			break;
+			
 		}
 	}
 	
@@ -64,8 +163,8 @@ public class JuegoAhorcado1 {
 			}
 		}
 		
-		
-		System.out.println("\nÂ¡Palabra Secreta!");
+		System.out.println("");
+		System.out.println("¡Palabra Secreta!");
 		
 		for (int i = 0; i < vAciertos.length; i++) {
 			System.out.print(vAciertos[i]+ " ");
@@ -150,7 +249,8 @@ public class JuegoAhorcado1 {
 		inicializarVectores(palabraSecreta, vPalabraSecreta, vAciertos, vFallos);
 	
 		do {
-		
+			
+			System.out.println("");
 			System.out.println("Dime una letra");
 			letra = leer.next();
 			
